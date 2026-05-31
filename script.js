@@ -17,47 +17,73 @@ let currentFolder;
 let currentTrack;
 const songInFo = document.querySelector(".songInfo");
 async function getSongs(folder) {
-   currentFolder = folder;
-  let a = await fetch(`/assets/${folder}/`);
-  let response = await a.text();
-  //   console.log(response);
-  let div = document.createElement("div");
-  div.innerHTML = response;
-  let as = div.getElementsByTagName("a");
-  //  console.log(as);
-  let songs = [];
-  for (let i = 0; i < as.length; i++) {
-    const element = as[i];
-    if (element.href.includes(".mp3")) {
-      songs.push(element.href.split(`/${folder}/`)[1]);
-    }
-  }
-   //Displaying the songs
+  currentFolder = folder;
+
+  // Load songs from songs.json
+  let response = await fetch(`/assets/${folder}/songs.json`);
+  let songs = await response.json();
+
+  // Display songs
   let songUL = document
     .querySelector(".song-list")
     .getElementsByTagName("ul")[0];
-  songUL.innerHTML = "";
-  for (const song of songs) {
-    songUL.innerHTML =
-      songUL.innerHTML +
-      `    <li data-song="${song}">
 
-                <img class="invert " src="assets/icons/play-Img.svg" alt="play-Img">
-              <div class="songInFo">
-              <div class="songName">${song.replaceAll("-", " ").replace(".mp3", "").slice(0, -6).split(" ")[1] + " " + song.replaceAll("-", " ").replace(".mp3", "").slice(0, -6).split(" ")[2]}</div>
-              <div class="artistName">${song.replaceAll("-", " ").replace(".mp3", "").slice(0, -6).split(" ")[0]}</div>
-              <img class="invert" id="playBtnLiberay" src="assets/icons/playbtn.svg" alt="">
-              </li>`;
+  songUL.innerHTML = "";
+
+  for (const song of songs) {
+    songUL.innerHTML += `
+      <li data-song="${song}">
+        <img class="invert" src="assets/icons/play-Img.svg" alt="play-Img">
+
+        <div class="songInFo">
+          <div class="songName">
+            ${
+              song
+                .replaceAll("-", " ")
+                .replace(".mp3", "")
+                .slice(0, -6)
+                .split(" ")[1] +
+              " " +
+              song
+                .replaceAll("-", " ")
+                .replace(".mp3", "")
+                .slice(0, -6)
+                .split(" ")[2]
+            }
+          </div>
+
+          <div class="artistName">
+            ${
+              song
+                .replaceAll("-", " ")
+                .replace(".mp3", "")
+                .slice(0, -6)
+                .split(" ")[0]
+            }
+          </div>
+        </div>
+
+        <img
+          class="invert"
+          id="playBtnLiberay"
+          src="assets/icons/playbtn.svg"
+          alt=""
+        >
+      </li>`;
   }
 
-               Array.from(document.querySelectorAll(".song-list li")).forEach((li) => {
+  // Add click events
+  Array.from(document.querySelectorAll(".song-list li")).forEach((li) => {
     li.addEventListener("click", () => {
       let track = li.dataset.song;
+
       console.log("Playing:", track);
+
       playMusic(track);
       playBtn.src = "assets/icons/pause.svg";
     });
   });
+
   return songs;
 }
 // let currentSong;
