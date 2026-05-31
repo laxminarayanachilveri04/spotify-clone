@@ -163,6 +163,12 @@ async function displayAlbums() {
 
         </div>`;
     }
+    Array.from(document.querySelectorAll(".card")).forEach((card) => {
+    card.addEventListener("click", async () => {
+        songs = await getSongs(`songs/${card.dataset.folder}`);
+        playMusic(songs[0]);
+    });
+});
 }
 async function main() {
 
