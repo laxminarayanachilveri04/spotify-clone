@@ -141,6 +141,7 @@ async function displayAlbums() {
     ];
 
     let cardContainer = document.querySelector(".cardContainer");
+
     cardContainer.innerHTML = "";
 
     for (const folder of folders) {
@@ -152,13 +153,7 @@ async function displayAlbums() {
         <div data-folder="${folder}" class="card">
 
             <div class="playButton">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 20V4L19 12L5 20Z"
-                    stroke="#141B34"
-                    fill="#000"
-                    stroke-width="1.5"
-                    stroke-linejoin="round" />
-                </svg>
+                ...
             </div>
 
             <img src="/assets/songs/${folder}/cover.jpg">
@@ -168,13 +163,6 @@ async function displayAlbums() {
 
         </div>`;
     }
-
-    Array.from(document.querySelectorAll(".card")).forEach((card) => {
-        card.addEventListener("click", async () => {
-            songs = await getSongs(`songs/${card.dataset.folder}`);
-            playMusic(songs[0]);
-        });
-    });
 }
 async function main() {
 
