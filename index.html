@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Spotify Clone</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Utility CSS -->
+    <link rel="stylesheet" href="utility.css" />
+
+    <!-- Google Font -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+       MAIN CONTAINER
+  ========================== -->
+
+    <div class="container flex">
+      <!-- =========================
+         LEFT SIDEBAR
+    ========================== -->
+
+      <div class="left bg-black">
+        <!-- HOME SECTION -->
+        <div class="home bg-gray rounded p1 m1">
+          <!-- Logo -->
+          <div class="logo">
+            <div class="innerLogo">
+              <img src="assets/icons/logo1.svg" alt="Spotify Logo" />
+            <h3>Spotify</h3>
+            </div>
+            <img class="cancel invert" src="assets/icons/cancel.svg" alt="cancel Button">
+          </div>
+
+          <!-- Navigation -->
+          <ul>
+            <li>
+              <img
+                class="invert"
+                id="home-img"
+                src="assets/icons/home.svg"
+                alt="Home Icon"
+              />
+              <h3>Home</h3>
+            </li>
+
+            <li>
+              <img
+                class="invert"
+                src="assets/icons/search.svg"
+                alt="Search Icon"
+              />
+              <h3>Search</h3>
+            </li>
+          </ul>
+        </div>
+
+        <!-- LIBRARY SECTION -->
+        <div class="library bg-gray rounded p1 m1">
+          <!-- Playlist Header -->
+          <div class="playlist">
+            <ul>
+              <li>
+                <img
+                  class="invert"
+                  src="assets/icons/playlist.svg"
+                  alt="Playlist Icon"
+                />
+                <h2>Your Library</h2>
+              </li>
+            </ul>
+          </div>
+
+
+            
+
+          <!-- Song List  -->
+
+          <div class="song-list">
+             <ul class="p1 m1 songList" >
+             <!-- // using js will append li here.... -->
+              
+            </ul>
+          </div>
+           
+
+          <!-- Footer -->
+          <footer>
+            <ul>
+              <li>
+                <a href="#">Legal</a>
+              </li>
+
+              <li>
+                <a href="#">Privacy Center</a>
+              </li>
+
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+
+              <li>
+                <a href="#">Cookies</a>
+              </li>
+
+              <li>
+                <a href="#">About Ads</a>
+              </li>
+
+              <li>
+                <a href="#">Accessibility</a>
+              </li>
+
+              <li>
+                <!-- Language Button -->
+                <button>🌐 English</button>
+              </li>
+            </ul>
+          </footer>
+        </div>
+      </div>
+
+      <!-- =========================
+         RIGHT SECTION
+    ========================== -->
+
+      <div class="right bg-black">
+        <!-- HEADER -->
+        <div class="header">
+          <!-- Navigation Arrows -->
+          <div class="nav">
+            <!-- Left Arrow -->
+              <!-- hamberguer -->
+               <img class="hamburger invert" src="assets/icons/menu.svg" alt="menubtn">
+          
+             
+            <svg id="prevAlbum"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="none"
+              stroke="white"
+              stroke-width="1.5"
+            >
+              <path d="M15 6L9 12L15 18" />
+            </svg>
+
+            <!-- Right Arrow -->
+            <svg id="nextAlbum"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="none"
+              stroke="white"
+              stroke-width="1.5"
+            >
+              <path d="M9 6L15 12L9 18" />
+            </svg>
+          </div>
+         
+
+          <!-- Buttons -->
+          <div class="buttons">
+            <button>Sign Up</button>
+
+            <button>Login</button>
+          </div>
+        </div>
+
+        <!-- Playlist Heading -->
+        <h1 id="heading">Spotify Playlists</h1>
+
+        <!-- =========================
+           PLAYLIST CARDS
+      ========================== -->
+
+        <div class="spotifyPlaylist cardContainer">
+         
+        </div>
+        <!-- Playbar Controls -->
+        <div class="playbar">
+          <div class="seekbar">
+            <div id="circle">
+              
+            </div>
+          </div>
+          <div class="songInfo">
+            song info
+          </div>
+          <div class="controlBtn">
+            <img id="prevBtn" src="assets/icons/previousBtn.svg" alt="Play Previous" />
+            <img id="playBtn" src="assets/icons/playbtn.svg" alt="Play Button" />
+            <img id="nextBtn" src="assets/icons/nextBtn.svg" alt="Play Next" />
+          </div>
+          <div class="timeStamp">
+            time stamp
+          </div>
+          <div class="volume">
+            <img id="volumeBtn" src="assets/icons/volume.svg" alt="volume Button">
+            <input id="volumeInput" type="range" min="0" max="100" value="100">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

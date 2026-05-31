@@ -1,0 +1,65 @@
+/* =========================
+   FLEX UTILITIES
+========================= */
+
+.flex{
+    display: flex;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+
+/* =========================
+   BACKGROUND COLORS
+========================= */
+
+.bg-black{
+    background-color: black;
+    color: white;
+}
+
+.bg-gray{
+    background-color: #121212;
+}
+
+/* =========================
+   BORDER RADIUS
+========================= */
+
+.rounded{
+    border-radius: 8px;
+}
+
+/* =========================
+   MARGIN UTILITIES
+========================= */
+
+.m1{
+    margin: 5px;
+}
+
+.m2{
+    margin: 10px;
+}
+
+/* =========================
+   PADDING UTILITIES
+========================= */
+
+.p1{
+    padding: 10px;
+}
+
+/* =========================
+   IMAGE UTILITIES
+========================= */
+
+/* Invert white/black icons */
+.invert{
+    filter: invert(1);
+}
