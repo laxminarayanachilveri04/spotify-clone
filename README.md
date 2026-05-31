@@ -57,6 +57,8 @@ This project helped me practice:
 * Deployment with Vercel
 
 ## Live Demo
+<img width="1838" height="1048" alt="image" src="https://github.com/user-attachments/assets/e7bec4a8-d737-4e1e-b0f7-c70ef6890dc6" />
+
 
 Add your deployed Vercel link here:
 
