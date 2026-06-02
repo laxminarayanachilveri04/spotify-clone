@@ -318,6 +318,9 @@ footer ul li button{
 #volumeBtn{
 cursor: pointer;
 }
+#volumeInput{
+   //have to align it to center;
+}
 
 /* .controlBtn{
 } */
